@@ -8,7 +8,7 @@ const ShowBook = () => {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
-  useState(() => {
+  useEffect(() => {
     setLoading(true);
     axios
       .get(`https://book-store-server-gamma.vercel.app/books/${id}`)
@@ -22,7 +22,7 @@ const ShowBook = () => {
       });
   });
 
-  console.log(book);
+  // console.log(book);
 
   return (
     <div className="p-4">
